@@ -18,12 +18,11 @@ import java.util.ArrayList;
 
 public class StaticForrmAdaptator extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
-    private RecyclerView recyclerView;
     private ArrayList<BaseStaticForm> baseStaticForms;
+    private StaticFormListener listener;
 
-    public StaticForrmAdaptator(Context context, RecyclerView recyclerView) {
+    public StaticForrmAdaptator(Context context) {
         this.context = context;
-        this.recyclerView = recyclerView;
         baseStaticForms = new ArrayList<>();
     }
 
@@ -96,5 +95,12 @@ public class StaticForrmAdaptator extends RecyclerView.Adapter<RecyclerView.View
 
     public void addElements(ArrayList<BaseStaticForm> baseStaticForms) {
         this.baseStaticForms = baseStaticForms != null ? baseStaticForms : new ArrayList<BaseStaticForm>();
+        notifyDataSetChanged();
+    }
+
+    public interface StaticFormListener {
+        void onClick(View view, int position);
+
+        void onLongClick(View view, int position);
     }
 }

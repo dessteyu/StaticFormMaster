@@ -1,9 +1,9 @@
-apply plugin: 'com.android.application'
-
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.dessteyu.baye.staticformdisplayer"
+//        applicationId "com.dessteyu.baye.staticformdisplayer"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
